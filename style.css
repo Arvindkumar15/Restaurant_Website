@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,200&family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,300&family=Rowdies&display=swap');
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+ /* ########################### Utility class #######################  */
+ .container{
+    max-width: 1000px;
+    width:90%;
+    margin: auto;
+ }
+
+ .btn{
+    display: inline-block;
+    background: #117964;
+    color: #fff;
+    padding: 1rem 1.8rem;
+    border-radius: 20px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 1em;
+ }
+
+
+
+ /* ######################navbar styling ###################### */
+
+ /* for desktop */
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+ }
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.5;
+    z-index: 999;
+ }
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+ }
+
+.menu-items{
+    order: 2;
+    display: flex;
+ }
+
+.menu-items li{
+    list-style: none;
+    margin: 1.5rem;
+    font-size: 1.8rem;
+ }
+
+.logo{
+    order: 1;
+    font-size: 3rem;
+ }
+
+.navbar a{
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition:color 0.3s ease-in-out;
+ }
+.navbar a:hover{
+    color: #055a49;
+ }
+ 
+ /* ################################ shocase styling ################################  */
+
+ .showcase-area{
+    height: 50vh;
+    background: linear-gradient(rgba(240, 240, 240, 0.144), rgba(255, 255, 255, 0.5)) ,url("./img/header-image2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+ .showcase-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+ }
+
+ .main-title{
+    text-transform: uppercase;
+ }
+
+  /* ################################### About-us Styling #############################  */
+#about{
+   padding: 50px 0;
+   background-color: #f5f5f7;
+}
+
+.about-wrapper{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+#about h2{
+   font-size: 2.2rem;
+}
+#about h3{
+   font-size: 1.2rem;
+   color: rgb(152, 146, 146);
+   font-weight: 600;
+}
+#about p{
+   font-size: 1.2rem;
+   color: #444;
+}
+
+.about-text{
+   /* border: 2px solid blanchedalmond; */
+   flex: 1 1 300px;
+   padding: 20px;
+   margin: auto;
+   transform: translateX(-150%);
+   animation: about-text-animation 1s ease-in-out forwards;
+}
+@keyframes about-text-animation{
+   100%{
+      transform: translateX(0);
+   }
+
+}
+.about-img{
+   flex: 1 1 300px;
+   padding: 20px;
+   /* border: 2px solid red; */
+   transform: translateX(150%);
+   animation: about-img-animation 1s ease-in-out forwards;
+} 
+@keyframes about-img-animation{
+   100%{
+      transform: translateX(0);
+   }
+
+}
+.about-img img{
+   display: block;
+   height: 300px;
+   max-width: 100%;
+   margin: auto;
+   object-fit: cover;
+   object-position: right;
+}
+
+ /* ############################## Food Type ############################### */
+#food{
+   padding: 5rem 0 10rem 0;
+   /* background: #bbd7d2; */
+}
+
+#food h2{
+text-align: center;
+   margin: 2rem 0;
+   font-size: 3rem;
+   font-weight: 300;
+   text-transform: uppercase;
+}
+
+ .food-wrapper{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+ }
+
+ .food-type img{
+   display: block;
+   width: 100%;
+   max-height: 200px;
+   object-fit: cover;
+   object-position: center;
+ }
+.img-container{
+   margin: 0 1rem;
+   position: relative;
+   color: white;
+}
+
+.img-content{
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   z-index: 2;
+   text-align: center;
+   transition: all 0.3s ease-in-out 0.1s;
+}
+
+.img-content h3{
+   color: #fff;
+   font-size: 2.5rem;
+}
+.img-content a{
+   font-size: 1.2rem;
+}
+
+.img-container::after{
+   content: '';
+   display: blok;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.871);
+   /* opacity: 0; */
+   z-index: 1;
+
+   transform: scaleY(0);
+   transform-origin: 100%;
+   transition: all 0.3s ease-in-out;
+}
+
+.img-container:hover::after{
+   opacity: 1;
+   transform: scaleY(1);
+}
+
+.img-container:hover .img-content{
+   opacity: 1;
+   top: 40%;
+}
+ /* ########################## Food Menu Section ###########################  */
+#food-menu{
+   padding: 5rem 0 5rem 0;
+}
+ .food-menu-heading{
+   text-align: center;
+   margin: 1rem;
+   font-size: 3rem;
+   font-weight: 300;
+   text-transform: uppercase;
+ }
+
+ .food-menu-container{
+   display: flex;
+   flex-wrap: wrap;
+   padding: 4rem 0 2rem 0;
+ }
+
+ .food-menu-container img{
+   display: block;
+   width: 15rem;
+   height: 15rem;
+   border-radius: 50%;
+   object-fit: cover;
+   object-position: center;
+ }
+
+ .food-menu-item{
+   /* border: 2px solid red; */
+   display: flex;
+   flex: 1 1 40rem;
+   justify-content: space-evenly;
+   margin-bottom: 3rem;
+ }
+.food-description{
+   margin: auto 1rem;
+}
+
+.food-title{
+   font-size: 2.5rem;
+   font-weight: 300;
+}
+.food-description p{
+   font-size: 1.3rem;
+   font-weight: 300;
+}
+.food-description .price{
+   font-weight: 700;
+   color: green;
+}
+
+/* ################################# Testimonila #########################  */
+
+#testimonials{
+   background: rgb(231, 228, 228);
+   padding: 3rem 0 5rem 0;
+
+}
+
+.testimonial-title{
+   text-align: center;
+   font-size: 2rem;
+   font-weight: 300;
+   text-transform: uppercase;
+}
+
+.testimonial-container{
+   display: flex;
+   justify-content: space-between;
+   font-size: 1.2rem;
+}
+
+.testimonial-container .checked{
+   color: rgb(238, 204, 9);
+   font-size: 2rem;
+}
+
+.testimonial-box{
+   text-align: center;
+   padding: 1rem;
+}
+
+.testimonial-box .testimonial-text{
+   margin: 1rem 0;
+   color: #444;
+}
+
+.customer-photo img{
+   display: block;
+   width: 10rem;
+   height: 10rem;
+   object-fit: cover;
+   object-position: center;
+   border-radius: 50%;
+   margin: auto;
+}
+
+ /* ############################# Contact us Page ########################## */
+  #contact{
+   padding: 4rem 0;
+   background: rgb(226, 226, 226);
+  }
+
+  .contact-container{
+   display: flex;
+   background: #fff;
+  }
+
+  .contact-image{
+   width: 50%;
+  }
+  .contact-image img{
+   display: block;
+   height: 400px;
+   object-fit: cove;
+   width: 100%;
+   object-position: center;
+  }
+.form-container{
+   padding: 1rem;
+   width: 50%;
+   margin: auto;
+}
+.form-container input{
+   display: block;
+   width: 100%;
+   border: none;
+   border-bottom: 2px solid #ddd;
+   padding: 1rem 0;
+   box-shadow: none;
+   outline: none;
+   margin-bottom: 1rem;
+   color: #444;
+   font-weight: 500;
+}
+
+.form-container textarea{
+   display: block;
+   width: 100%;
+   border: none;
+   border-bottom: 2px solid #ddd;
+   padding: 1rem 0;
+}
+
+.form-container  h2{
+   font-size: 3rem;
+   font-weight: 300;
+   color: #444;
+   margin-bottom: 1rem;
+}
+
+.form-container a{
+   font-size: 1.5rem;
+}
+
+ /* ################################## Footer ##########################  */
+ #footer{
+   text-align: center;
+   font-size: 1.5rem;
+   padding: 1rem 0 1rem 0;
+   font-weight: 500;
+   color: #fff;
+   background: rgb(65, 65, 65);
+   /* height: 150px; */
+ }
+ .mediah2{
+   color: rgb(208, 203, 177);
+   padding-top: 1.5rem;
+ }
+
+ .social-media-wrapper{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+.social-media{
+   display: flex;
+   align-items: center;
+   margin: 2rem;
+}
+.fa-instagram{
+   color: rgb(225, 78, 228);
+}
+.fa-facebook{
+   color: rgb(78, 78, 223);
+}
+.fa-twitter{
+   color: rgb(12, 167, 194);
+}
+.fa-telegram{
+   color: rgb(25, 222, 205);
+}
+.social-media .fab{
+   /* display: block; */
+   font-size: 3rem;
+   margin-right: 2px;
+ }
